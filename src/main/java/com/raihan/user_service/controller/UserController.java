@@ -33,7 +33,7 @@ public class UserController {
 		User user=this.userService.getUser(userId)	;
 		//http://localhost:9002/contact/1001
 		
-		List contact=this.restTemplate.getForObject("http://localhost:9002/contact/user/1001", List.class);
+		List contact=this.restTemplate.getForObject("http://localhost:9002/contact/user/"+user.getUserId(), List.class);
 				
 				user.setContacts(contact);
 	return user;
